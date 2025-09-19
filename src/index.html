@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="description - Landing Page">
+  <title>start | Home</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+  <link rel="stylesheet" href="styles/main.scss">
+  <script type="module" src="js/app.js"></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header id="header" class="header" data-js-header>
+      <div class="header__container">
+        <div class="header__overlay">
+          <nav class="header__menu menu" data-js-header-menu>
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#about" class="menu__link hover-link">ABOUT ME</a>
+              </li>
+              <li class="menu__item">
+                <a href="#resume" class="menu__link hover-link">MY EXPERIENCE</a>
+              </li>
+              <li class="menu__item">
+                <a href="#skills" class="menu__link hover-link">MY SKILLS</a>
+              </li>
+              <li class="menu__item">
+                <a href="#portfolio" class="menu__link hover-link">MY PORTFOLIO</a>
+              </li>
+              <li class="menu__item">
+                <a href="#footer" class="menu__link hover-link">CONTACTS</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__actions"></div>
+        <button type="button" class="header__burger-button burger-button" data-js-header-burger-button
+          aria-label="Open menu" title="Open menu">
+          <span class="burger-button__inner">
+            <span class="burger-button__line"></span>
+            <span class="burger-button__line"></span>
+            <span class="burger-button__line"></span>
+          </span>
+        </button>
+      </div>
+    </header>
+    <main class="page">
+      <section id="hero" class="page__hero hero">
+        <div class="hero__container"></div>
+        <video class="video-background" autoplay muted loop>
+          <source type="video/mp4" src="assets/video/3.mp4">
+        </video>
+      </section>
+    </main>
+    <footer id="footer" class="footer">
+      <div class="footer__container"></div>
+    </footer>
+  </div>
+</body>
+
+</html>
