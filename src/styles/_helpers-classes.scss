@@ -36,3 +36,16 @@
 // 		height: 100%;
 // 	}
 // }
+
+.ibg {
+  position: relative;
+  aspect-ratio: 16 / 9; // удалить здесь и задавать каждому отдельному изображению
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

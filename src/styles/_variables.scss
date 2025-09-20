@@ -2,11 +2,11 @@
 
 // --f-font-size: #{rem(16)}; #{rgba(#000, 10%) (если используем функции в css переменных, надо обернуть в #{} , иначе функции не будут работать)
 :root {
-  --font-family-base: 'Roboto', sans-serif;
-  --font-family: 'Roboto', sans-serif;
-  --second-family: 'Roboto', sans-serif;
+  --font-family-base: 'Mulish', sans-serif;
+  --font-family: 'Mulish', sans-serif;
+  --second-family: 'Oswald', sans-serif;
 
-  --container-width: #{rem(1200)};
+  --container-width: #{rem(1400)};// 1440 - 20 - 20
   --container-padding-x: #{rem(15)};
   --transition-duration: 0.3s;
   --transition: 0.3s ease 0s;
@@ -14,21 +14,21 @@
   --font-size: #{rem(16)};
   --font-size-mobile: #{rem(16)};
   --font-weight: 400;
-  --line-height: 1;
+  --line-height: 1.5;
 
-  --main-color: var(--color-dark);
-  --second-color: var(--color-orange);
+  --main-color: var(--color-white);
+  --second-color: var(--color-dark);
   --accent-color: var(--color-orange);
   --hover-color: var(--color-orange);
   --hover-background: var(--color-orange);
-  --color-bg-body: var(--color-white);
+  --color-bg-body: var(--color-dark);
   --scroll-up: var(--color-orange);
 
   --color-white: #ffffff;
-  --color-light: #fafaf5;
-  --color-dark: #000000;
-  --color-orange: #ffa501;
+  --color-light: #989898;
+  --color-dark: #222222;
+  --color-orange: #FF3C3C;
 
-  --border: 1px solid var(--color-white);
-  --border-radius: #{rem(8)};
+  // --border: 1px solid var(--color-white);
+  // --border-radius: #{rem(8)};
 }

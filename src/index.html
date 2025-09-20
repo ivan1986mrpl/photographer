@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="description - Landing Page">
-  <title>start | Home</title>
+  <meta name="description" content="description - Landing Page Portfolio">
+  <title>Portfolio | Home</title>
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
@@ -18,28 +18,30 @@
   <div class="wrapper">
     <header id="header" class="header" data-js-header>
       <div class="header__container">
+        <a href="#" class="header__logo" aria-label="home" title="home">
+          <img src="assets/img/logo.svg" alt="home" width="20" height="20">
+        </a>
         <div class="header__overlay">
           <nav class="header__menu menu" data-js-header-menu>
             <ul class="menu__list">
               <li class="menu__item">
-                <a href="#about" class="menu__link hover-link">ABOUT ME</a>
+                <a href="#about" class="menu__link">about me</a>
               </li>
               <li class="menu__item">
-                <a href="#resume" class="menu__link hover-link">MY EXPERIENCE</a>
+                <a href="#portfolio" class="menu__link">portfolio</a>
               </li>
               <li class="menu__item">
-                <a href="#skills" class="menu__link hover-link">MY SKILLS</a>
+                <a href="#price" class="menu__link">price</a>
               </li>
               <li class="menu__item">
-                <a href="#portfolio" class="menu__link hover-link">MY PORTFOLIO</a>
+                <a href="#faq" class="menu__link">faq</a>
               </li>
               <li class="menu__item">
-                <a href="#footer" class="menu__link hover-link">CONTACTS</a>
+                <a href="#footer" class="menu__link">contacts</a>
               </li>
             </ul>
           </nav>
         </div>
-        <div class="header__actions"></div>
         <button type="button" class="header__burger-button burger-button" data-js-header-burger-button
           aria-label="Open menu" title="Open menu">
           <span class="burger-button__inner">
@@ -52,14 +54,57 @@
     </header>
     <main class="page">
       <section id="hero" class="page__hero hero">
-        <div class="hero__container"></div>
-        <video class="video-background" autoplay muted loop>
-          <source type="video/mp4" src="assets/video/3.mp4">
-        </video>
+        <div class="hero__container">
+          <div class="hero__top">
+            <div class="hero__content">
+              <div class="hero__metrics metrics">
+                <div class="metrics__item">
+                  <div class="metrics__quantity" data-animation-counter>+ 487</div>
+                  <div class="metrics__descr">Photo sessions</div>
+                </div>
+                <div class="metrics__item">
+                  <div class="metrics__quantity" data-animation-counter>+ 356</div>
+                  <div class="metrics__descr">Satisfied clients</div>
+                </div>
+              </div>
+              <div class="hero__header">
+                <h1 class="hero__title">Professional photographer</h1>
+                <div class="hero__subtitle">Capture the Moment. Tell Your Story.</div>
+              </div>
+            </div>
+            <div class="hero__image">
+              <img src="assets/img/hero/1.jpg" alt="photo" class="hero__img hero__img--small" width="220" height="220">
+              <img src="assets/img/hero/img.jpg" alt="photo" class="hero__img" width="280" height="374">
+            </div>
+          </div>
+          <div class="hero__bottom">
+            <a href="#about" class="hero__button"><span class="icon icon--arrow">Scroll down</span></a>
+            <div class="hero__text">
+              <p>Hi! I’m Vera, a photographer. For me, photography is more than just an image.</p>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <footer id="footer" class="footer">
-      <div class="footer__container"></div>
+      <div class="footer__top">
+        <div class="footer__container">
+          <h3 class="footer__title">Like my portfolio? Sign up for a shoot!</h3>
+          <form action="#" class="footer__form form"></form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__container">
+          <ul class="footer__bottom-list">
+            <li class="footer__bottom-item"><a href="#" class="footer__bottom-link" target="_blank">instagram</a></li>
+            <li class="footer__bottom-item"><a href="#" class="footer__bottom-link" target="_blank">telegram</a></li>
+            <li class="footer__bottom-item"><a href="#" class="footer__bottom-link" target="_blank">whatsapp</a></li>
+            <li class="footer__bottom-item"><a href="#" class="footer__bottom-link" target="_blank">Europe</a></li>
+            <li class="footer__bottom-item"><a href="tel:+12349843572" class="footer__bottom-link">+1 234 9843572</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </footer>
   </div>
 </body>

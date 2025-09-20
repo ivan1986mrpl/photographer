@@ -1,7 +1,7 @@
 @use '../helpers' as *;
-@use '../base/header/header-fon';
-@use '../base/header/header-shadow';
-@use '../base/header/burger-2';
+// @use '../base/header/header-fon';
+// @use '../base/header/header-shadow';
+@use '../base/header/burger-4';
 @use '../base/header/menu-header';
 
 .header {
@@ -13,48 +13,23 @@
 
   &__container {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
-
-    @include adaptive-clamp('column-gap', 40, 20);
-    @include adaptive-clamp('min-height', 80, 60);
+    column-gap: 20px;
+    min-height: 55px;
   }
 
-  &__actions {
-    position: relative;
-    z-index: 5;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: rem(15);
+  &__logo {
   }
 
-  &__codewars {
-    width: rem(48);
-    height: rem(48);
-    transition: all 0.3s ease 0s;
-
-    @media (any-hover: hover) {
-      &:hover {
-        transform: scale(1.09);
-      }
-    }
+  &__overlay {
   }
 
-  &__button {
-    padding: rem(14) rem(20);
-    font-weight: 500;
-    line-height: 1.2;
-    color: var(--color-white);
-    border: 1px solid var(--color-white);
-    border-radius: rem(8);
-    transition: all 0.3s;
+  &__menu {
+  }
 
-    @media (any-hover: hover) {
-      &:hover {
-        color: var(--color-orange);
-        border: 1px solid var(--color-orange);
-      }
-    }
+  &__burger-button {
   }
 }
+
+

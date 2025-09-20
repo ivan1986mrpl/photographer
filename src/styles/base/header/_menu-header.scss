@@ -1,9 +1,9 @@
 @use '../../helpers' as *;
 
 .menu {
-  --menu-link: #f0ede8;
-  --menu-background: #1f2a32;
-  --menu-background-before: #1f2a32;
+  --menu-link: var(--color-white);
+  --menu-background: var(--color-dark);
+  --menu-background-before: var(--color-dark);
 
   @media (max-width: em(767.98)) {
     position: fixed;
@@ -46,8 +46,9 @@
     flex-wrap: wrap;
     align-items: center;
     row-gap: rem(10);
+    column-gap: 37px;
 
-    @include adaptive-clamp('column-gap', 30, 15);
+    // @include adaptive-clamp('column-gap', 30, 15);
 
     @media (max-width: em(767.98)) {
       flex-direction: column;
@@ -61,7 +62,9 @@
   }
 
   &__link {
+    font-family: var(--second-family);
     color: var(--menu-link);
+    font-size: 21px;
 
     @media (max-width: em(767.98)) {
       display: inline-flex;
