@@ -45,8 +45,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    row-gap: rem(10);
-    column-gap: 37px;
+    gap: rem(10) 37px;
 
     // @include adaptive-clamp('column-gap', 30, 15);
 
@@ -63,8 +62,8 @@
 
   &__link {
     font-family: var(--second-family);
-    color: var(--menu-link);
     font-size: 21px;
+    color: var(--menu-link);
 
     @media (max-width: em(767.98)) {
       display: inline-flex;

@@ -132,7 +132,7 @@ function isInViewport(el) {
 
 export { counterAnimation };
 
-/* 
+/*
 data-animation-counter — длительность анимации в миллисекундах (1000 = 1 секунда)
 data-start-value — с какого числа начинать анимацию (по умолчанию 0)
 data-easing — название easing-функции для анимации (linear, easeOutQuad, easeInOutCubic)

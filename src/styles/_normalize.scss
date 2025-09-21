@@ -45,6 +45,7 @@ svg * {
 p {
   &:not(:last-child) {
     --paragraph-margin-bottom: 10px;
+
     margin-bottom: var(--paragraph-margin-bottom);
   }
 }

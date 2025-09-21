@@ -1,5 +1,6 @@
 @use '../helpers' as *;
-// @use '../base/header/header-fon';
+@use '../base/header/header-fon';
+
 // @use '../base/header/header-shadow';
 @use '../base/header/burger-4';
 @use '../base/header/menu-header';
@@ -20,6 +21,8 @@
   }
 
   &__logo {
+    position: relative;
+    z-index: 5;
   }
 
   &__overlay {
@@ -31,5 +34,3 @@
   &__burger-button {
   }
 }
-
-

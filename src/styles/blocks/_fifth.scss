@@ -1,1 +1,57 @@
 @use '../helpers' as *;
+
+.faq {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__container {
+    display: flex;
+    gap: 40px;
+
+    @media (max-width: em(1024)) {
+      flex-direction: column;
+    }
+  }
+
+  &__header {
+    flex: 0 1 50%;
+  }
+
+  &__title {
+  }
+
+  &__subtitle {
+  }
+
+  &__spollers {
+    flex: 0 1 50%;
+  }
+}
+
+.spollers {
+  &__item {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--color-white);
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+
+    @include hover {
+      color: var(--color-orange);
+    }
+
+    @media (max-width: em(345)) {
+      font-size: 16px;
+    }
+  }
+
+  &__text {
+    padding-top: 18px;
+  }
+}

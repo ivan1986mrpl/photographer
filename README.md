@@ -45,4 +45,3 @@ npm run lint:fix
 - https://www.figma.com/design/iFsApEUsf6tPwXas56gOiT/Portfolio
 
 - https://github.com/sindresorhus/modern-normalize
-

@@ -10,12 +10,13 @@
 
   &__title {
     font-family: var(--second-family);
-    font-weight: 400;
     font-size: 20px;
+    font-weight: 400;
     line-height: 1.4;
-    text-transform: uppercase;
     text-align: center;
+    text-transform: uppercase;
     color: var(--color-dark);
+
     &:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -25,18 +26,19 @@
   }
 
   &__bottom {
-    min-height: 100px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    min-height: 100px;
   }
 
   &__bottom-list {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 40px;
-    @media (max-width: em(650)){
+
+    @media (max-width: em(650)) {
       flex-direction: column;
     }
   }
@@ -46,11 +48,11 @@
 
   &__bottom-link {
     font-family: var(--second-family);
-    font-weight: 400;
     font-size: 16px;
+    font-weight: 400;
     line-height: 1.5;
-    text-transform: uppercase;
     text-align: center;
+    text-transform: uppercase;
     color: var(--color-white);
   }
 }
