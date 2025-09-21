@@ -5,7 +5,7 @@
 // import headerFon from './modules/headerFon';
 // import spollers from './modules/spollers';
 // import { DateUpdater } from './modules/DateUpdater';
-// import { counterAnimation } from './modules/counterAnimation';
+import { counterAnimation } from './modules/counterAnimation';
 
 window.addEventListener('DOMContentLoaded', () => {
   // scrollUp();
@@ -13,5 +13,5 @@ window.addEventListener('DOMContentLoaded', () => {
   // headerFon();
   // spollers();
   // new DateUpdater('.date', { useIntl: false, lang: 'ru' });
-  // counterAnimation();
+  counterAnimation();
 });

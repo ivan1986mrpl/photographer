@@ -14,10 +14,9 @@
 @use 'blocks/footer';
 @use 'blocks/hero';
 @use 'blocks/second';
-
-// @use 'blocks/third';
-// @use 'blocks/fourth';
-// @use 'blocks/fifth';
+@use 'blocks/third';
+@use 'blocks/fourth';
+@use 'blocks/fifth';
 
 // .header,
 // main > *:not(:last-child), //  все секции, кроме последней
