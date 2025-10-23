@@ -2,7 +2,9 @@
 
 2. Deploy: [link](https://ivan1986mrpl.github.io/photographer/dist/)
 
-3. Screenshot:
+3. Technologies: HTML, SCSS, Javascript, Vite, Eslint, Stylelint, Prettier
+
+4. Screenshot:
    <img width="1900" height="5411" alt="portfolio-landing" src="https://github.com/user-attachments/assets/166bcc2e-70c1-407e-b27e-fdf642d57515" />
 
-4. Google Page Speed:
+5. Google Page Speed:
