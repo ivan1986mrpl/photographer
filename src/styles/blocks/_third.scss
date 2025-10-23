@@ -1,4 +1,85 @@
 @use '../helpers' as *;
 
 .portfolio {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  &__container {
+  }
+
+  &__header {
+    max-width: 360px;
+    margin-bottom: 40px;
+
+    @media (max-width: em(400)) {
+      max-width: 345px;
+    }
+  }
+
+  &__title {
+  }
+
+  &__subtitle {
+  }
+
+  &__slider {
+  }
+}
+
+.slider {
+  &__wrapper {
+    overflow-x: scroll;
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    min-height: 654px;
+  }
+
+  &__slide {
+    flex: 0 0 auto;
+
+    &--1 {
+      padding-top: 121px;
+    }
+
+    &--2 {
+      padding-top: 217px;
+    }
+
+    &--3 {
+      padding-top: 120px;
+    }
+
+    &--4 {
+    }
+
+    &--5 {
+      padding-top: 120px;
+    }
+
+    &--6 {
+      padding-top: 217px;
+    }
+
+    &--7 {
+    }
+
+    &--8 {
+      padding-top: 120px;
+    }
+
+    &--9 {
+      padding-top: 217px;
+    }
+
+    &--10 {
+    }
+
+    &--11 {
+      padding-top: 120px;
+    }
+
+    &--12 {
+    }
+  }
 }

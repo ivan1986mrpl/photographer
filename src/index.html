@@ -86,6 +86,11 @@
             </div>
           </div>
         </div>
+        <div class="sidebar">
+          <div class="sidebar__year">2025</div>
+          <div class="sidebar__line"></div>
+          <div class="sidebar__text">Best Photographer by MAX</div>
+        </div>
       </section>
 
       <section id="about" class="page__about about">
@@ -145,7 +150,64 @@
               <p>Every shoot is a story. Here you’ll find portraits, love stories, family sessions, and more.</p>
             </div>
           </div>
-          <div class="portfolio__slider"></div>
+        </div>
+        <div class="portfolio__slider slider">
+          <div class="slider__wrapper">
+            <div class="slider__slide slider__slide--1">
+              <img src="assets/img/slider/1.webp" alt="slide" class="slider__img slider__img--1" width="400"
+                height="534" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--2">
+              <img src="assets/img/slider/2.webp" alt="slide" class="slider__img slider__img--2" width="220"
+                height="220" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--3">
+              <img src="assets/img/slider/3.webp" alt="slide" class="slider__img slider__img--3" width="280"
+                height="374" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--4">
+              <img src="assets/img/slider/4.webp" alt="slide" class="slider__img slider__img--4" width="400"
+                height="534" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--5">
+              <img src="assets/img/slider/5.webp" alt="slide" class="slider__img slider__img--5" width="280"
+                height="374" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--6">
+              <img src="assets/img/slider/6.webp" alt="slide" class="slider__img slider__img--6" width="220"
+                height="220" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--7">
+              <img src="assets/img/slider/7.webp" alt="slide" class="slider__img slider__img--7" width="280"
+                height="374" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--8">
+              <img src="assets/img/slider/8.webp" alt="slide" class="slider__img slider__img--8" width="400"
+                height="534" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--9">
+              <img src="assets/img/slider/9.webp" alt="slide" class="slider__img slider__img--9" width="220"
+                height="220" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--10">
+              <img src="assets/img/slider/10.webp" alt="slide" class="slider__img slider__img--10" width="280"
+                height="374" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--11">
+              <img src="assets/img/slider/11.webp" alt="slide" class="slider__img slider__img--11" width="280"
+                height="374" loading="lazy">
+            </div>
+            <div class="slider__slide slider__slide--12">
+              <img src="assets/img/slider/12.webp" alt="slide" class="slider__img slider__img--12" width="400"
+                height="534" loading="lazy">
+            </div>
+          </div>
+          <div class="slider__pagination"></div>
+          <div class="slider__button-prev"></div>
+          <div class="slider__button-next"></div>
+          <div class="slider__scrollbar"></div>
+          <div class="slider__hover-zone slider__hover-zone--left"></div>
+          <div class="slider__hover-zone slider__hover-zone--right"></div>
         </div>
       </section>
 
@@ -170,7 +232,7 @@
                 </ul>
                 <div class="card__price">€150</div>
                 <div class="card__descr">For short sessions and quick results</div>
-                <button class="card__btn btn">Book now</button>
+                <button class="card__btn btn" data-popup-open="popup">Book now</button>
               </article>
             </li>
             <li class="price__item">
@@ -187,7 +249,7 @@
                 </ul>
                 <div class="card__price">€280</div>
                 <div class="card__descr">Perfect for couples, portraits, or lifestyle</div>
-                <button class="card__btn btn">Book now</button>
+                <button class="card__btn btn" data-popup-open="popup">Book now</button>
               </article>
             </li>
             <li class="price__item">
@@ -205,7 +267,7 @@
                 </ul>
                 <div class="card__price">€450</div>
                 <div class="card__descr">For when you want to capture everything</div>
-                <button class="card__btn btn">Book now</button>
+                <button class="card__btn btn" data-popup-open="popup">Book now</button>
               </article>
             </li>
             <li class="price__item">
@@ -223,7 +285,7 @@
                 </ul>
                 <div class="card__price">€900</div>
                 <div class="card__descr">Full-day or partial wedding coverage</div>
-                <button class="card__btn btn">Book now</button>
+                <button class="card__btn btn" data-popup-open="popup">Book now</button>
               </article>
             </li>
           </ul>
@@ -309,28 +371,67 @@
           </div>
         </div>
       </section>
-
     </main>
     <footer id="footer" class="footer">
       <div class="footer__top">
         <div class="footer__container">
           <h3 class="footer__title">Like my portfolio? Sign up for a shoot!</h3>
-          <form action="#" class="footer__form form"></form>
+          <form action="#" class="footer__form form">
+            <div class="form__field field">
+              <label class="field__label" for="name">your name</label>
+              <input class="field__input" id="name" type="text" name="name" placeholder=" " autocomplete="off" required>
+            </div>
+            <div class="form__field field">
+              <label class="field__label" for="tel">+1</label>
+              <input class="field__input" id="tel" type="tel" name="tel" placeholder=" " autocomplete="off"
+                inputmode="numeric" required>
+            </div>
+            <button class="form__btn btn" type="submit">book now</button>
+          </form>
         </div>
       </div>
       <div class="footer__bottom">
         <div class="footer__container">
           <ul class="footer__bottom-list">
-            <li class="footer__bottom-item"><a href="#" class="footer__bottom-link" target="_blank">instagram</a></li>
-            <li class="footer__bottom-item"><a href="#" class="footer__bottom-link" target="_blank">telegram</a></li>
-            <li class="footer__bottom-item"><a href="#" class="footer__bottom-link" target="_blank">whatsapp</a></li>
-            <li class="footer__bottom-item"><a href="#" class="footer__bottom-link" target="_blank">Europe</a></li>
+            <li class="footer__bottom-item"><a href="https://www.instagram.com/" class="footer__bottom-link" target="_blank">instagram</a></li>
+            <li class="footer__bottom-item"><a href="https://web.telegram.org/" class="footer__bottom-link" target="_blank">telegram</a></li>
+            <li class="footer__bottom-item"><a href="https://www.whatsapp.com/" class="footer__bottom-link" target="_blank">whatsapp</a></li>
+            <li class="footer__bottom-item"><a href="https://maps.app.goo.gl/g8YsfF8Xu7jQHZ6P6" class="footer__bottom-link" target="_blank">Europe</a></li>
             <li class="footer__bottom-item"><a href="tel:+12349843572" class="footer__bottom-link">+1 234 9843572</a>
             </li>
           </ul>
         </div>
       </div>
     </footer>
+
+    <div id="popup" class="popup">
+      <div class="popup__body">
+        <div class="popup__content">
+          <button type="button" class="popup__close close-popup" title="Close popup" aria-label="Close popup">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M30 10L10 30" stroke="#181C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M10 10L30 30" stroke="#181C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="popup__wrapper ">
+            <h3 class="popup__title">Like my portfolio? Sign up for a shoot!</h3>
+            <form action="#" class="popup__form form">
+              <div class="form__field field">
+                <label class="field__label" for="popup-name">your name</label>
+                <input class="field__input" id="popup-name" type="text" name="name" placeholder=" " autocomplete="off"
+                  required>
+              </div>
+              <div class="form__field field">
+                <label class="field__label" for="popup-tel">+1</label>
+                <input class="field__input" id="popup-tel" type="tel" name="tel" placeholder=" " autocomplete="off"
+                  inputmode="numeric" required>
+              </div>
+              <button class="form__btn btn" type="submit">book now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 

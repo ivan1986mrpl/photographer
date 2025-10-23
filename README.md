@@ -45,3 +45,13 @@ npm run lint:fix
 - https://www.figma.com/design/iFsApEUsf6tPwXas56gOiT/Portfolio
 
 - https://github.com/sindresorhus/modern-normalize
+
+- https://rolling-scopes-school.github.io/ivan1986mrpl-JSFE2025Q3/portfolio/dist/
+
+1. Task: [link](https://github.com/rolling-scopes-school/tasks/blob/master/stage1/tasks/portfolio/portfolio-part-1.md)
+2. Screenshot:
+<img width="1900" height="5411" alt="portfolio-landing" src="https://github.com/user-attachments/assets/166bcc2e-70c1-407e-b27e-fdf642d57515" />
+
+3. Deploy: [link](https://rolling-scopes-school.github.io/ivan1986mrpl-JSFE2025Q3/portfolio/dist/)
+4. Done 27.09.2025 / deadline 30.09.2025
+5. Score: 160 / 160

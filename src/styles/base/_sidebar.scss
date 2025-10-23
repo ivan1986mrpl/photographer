@@ -1,0 +1,34 @@
+@use '../helpers/' as *;
+
+.sidebar {
+  position: absolute;
+  top: 120px;
+  left: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-family);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.33333;
+  color: #ffffff;
+  writing-mode: sideways-lr;
+
+  &__year {
+  }
+
+  &__line {
+    width: 1px;
+    height: 536px;
+    background-color: var(--color-white);
+
+    @media (max-width: em(767.98)) {
+      height: 432px;
+    }
+  }
+
+  &__text {
+    white-space: nowrap;
+  }
+}

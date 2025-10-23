@@ -5,6 +5,8 @@
   }
 
   &__top {
+    padding-top: 40px;
+    padding-bottom: 20px;
     background-color: var(--color-white);
   }
 
@@ -23,13 +25,27 @@
   }
 
   &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    @media (max-width: em(750)) {
+      flex-direction: column;
+
+      .form__btn {
+        width: 100%;
+        max-width: 380px;
+      }
+    }
   }
 
   &__bottom {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   &__bottom-list {
@@ -40,6 +56,7 @@
 
     @media (max-width: em(650)) {
       flex-direction: column;
+      gap: 34px;
     }
   }
 
@@ -54,5 +71,62 @@
     text-align: center;
     text-transform: uppercase;
     color: var(--color-white);
+  }
+}
+
+.form {
+  &__field {
+    width: 100%;
+    max-width: 380px;
+  }
+
+  &__btn {
+  }
+}
+
+.field {
+  --field-color-dark: #222222;
+  --field-color-light: #d9d9d9;
+  --field-color-accent: #1e1e1e;
+
+  position: relative;
+
+  &:has(.field__input:not(:placeholder-shown)) .field__label {
+    color: var(--color-light);
+
+    // обращаемся к label только когда плейсхолдер не должен отображаться
+    scale: 0.8;
+    translate: -16px -48px; // надо подбирать
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: 17px; //  как в макете
+    color: var(--color-light);
+    translate: 0 -50%;
+  }
+
+  &__input {
+    --field-input-padding-x: 16px; //  как в макете
+    --field-search-input-icon-size: 16px;
+
+    width: 100%;
+    height: 60px;
+    padding-inline: var(--field-input-padding-x);
+    color: var(--color-dark);
+    background-color: transparent;
+    border: 1px solid var(--color-dark);
+
+    &:hover,
+    &:focus {
+      color: #1e1e1e;
+      border: 1px solid var(--color-orange);
+    }
+
+    &:focus {
+      background-color: var(--color-white);
+      outline: none;
+    }
   }
 }

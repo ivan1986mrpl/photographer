@@ -18,6 +18,8 @@
 // }
 
 .hero {
+  position: relative;
+
   &__container {
   }
 
@@ -61,7 +63,7 @@
     }
 
     &:not(:last-child) {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
   }
 
@@ -142,7 +144,7 @@
     column-gap: 72px;
   }
 
-  @media (max-width: em(1300)) {
+  @media (max-width: em(767.98)) {
     column-gap: 55px;
   }
 

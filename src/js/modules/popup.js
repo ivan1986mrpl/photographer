@@ -4,22 +4,19 @@ import {
   bodyLock,
   bodyUnlock,
   bodyLockStatus,
-} from '../function';
+} from '../function/function';
 
 export default function popup() {
-  // Делегирование кликов по всему body
   document.body.addEventListener('click', (e) => {
-    // Открытие попапа по клику на .popup-link
-    const popupLink = e.target.closest('.popup-link');
-    if (popupLink) {
+    const dataPopupOpen = e.target.closest('[data-popup-open]');
+    if (dataPopupOpen) {
       e.preventDefault();
-      const popupName = popupLink.getAttribute('href').replace('#', '');
+      const popupName = dataPopupOpen.getAttribute('data-popup-open');
       const currentPopup = document.getElementById(popupName);
       popupOpen(currentPopup);
-      return; // чтобы дальше не искать close-popup при клике по popup-link
+      return;
     }
 
-    // Закрытие попапа по клику на кнопку закрытия
     const closeBtn = e.target.closest('.close-popup');
     if (closeBtn) {
       e.preventDefault();
@@ -29,7 +26,7 @@ export default function popup() {
     }
   });
 
-  // Делегирование клика по затемнённой области модального окна
+  // Закрытие по клику вне popup__content
   document.body.addEventListener('click', (e) => {
     const openPopup = document.querySelector('.popup.open');
     if (

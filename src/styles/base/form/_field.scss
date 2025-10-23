@@ -19,7 +19,7 @@
     position: absolute;
     top: 50%;
     left: 17px; //  как в макете
-    color: #b3b3b3;
+    color: #b3b3b3; // #363535 (поменять на этот)
     translate: 0 -50%;
   }
 
@@ -59,7 +59,7 @@
   }
 }
 
-/* 
+/*
 <div class="field">
   <label class="field__label" for="new-task">New task title</label>
   <input class="field__input" id="new-task" placeholder=" " autocomplete="off">

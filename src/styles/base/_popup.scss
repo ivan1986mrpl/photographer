@@ -22,9 +22,13 @@
 
   &__content {
     position: relative;
-    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 60px 20px;
     background-color: #ffffff;
-    border-radius: 20px;
     opacity: 0;
     transition: all 0.4s ease 0s;
 
@@ -34,19 +38,11 @@
 
   &__close {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 40px;
-    height: 40px;
-    color: #000000;
-  }
-
-  &__title {
-    font-size: 40px;
-
-    &:not(:last-child) {
-      margin-bottom: 16px;
-    }
+    top: 18px;
+    right: 18px;
+    width: 24px;
+    height: 24px;
+    color: var(--color-dark);
   }
 }
 
@@ -62,18 +58,59 @@
   // transform: perspective(600px) translate(0, 0%) rotateX(0deg);
 }
 
-/* 
-<a href="#popup" class="popup-link">open popup 1</a>
-<div id="popup" class="popup">
-  <div class="popup__body">
-    <div class="popup__content">
-      <button type="button" class="popup__close close-popup">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M30 10L10 30" stroke="#181C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M10 10L30 30" stroke="#181C29" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-      </button>
-    </div>
-  </div>
-</div>
-*/
+.popup {
+  &__body {
+  }
+
+  &__content {
+  }
+
+  &__close {
+  }
+
+  &__wrapper {
+  }
+
+  &__title {
+    font-family: var(--second-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--color-dark);
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    .form__btn {
+      width: 100%;
+      max-width: 380px;
+    }
+  }
+}
+
+.form {
+  &__field {
+  }
+
+  &__btn {
+  }
+}
+
+.field {
+  &__label {
+  }
+
+  &__input {
+  }
+}
