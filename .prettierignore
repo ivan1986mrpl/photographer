@@ -22,7 +22,4 @@ dist
 build
 coverage
 
-# HTML
-*.html
-
 _fonts.scss

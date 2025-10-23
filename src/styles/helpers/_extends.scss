@@ -10,7 +10,7 @@
 }
 
 // кастомный нумерованный список
-%listCounter {
+%list-counter {
   list-style-type: none;
   counter-reset: item;
 
@@ -28,7 +28,7 @@
 }
 
 // Адаптивное видео
-%responsiveVideo {
+%responsive-video {
   video,
   iframe,
   object,
@@ -38,7 +38,7 @@
 }
 
 // Делает видео фоном страницы
-%videoBackground {
+%video-background {
   video,
   iframe,
   object,
@@ -57,7 +57,7 @@
 }
 
 // Серий фильтр
-%grayfilter {
+%gray-filter {
   filter: grayscale(1);
   transition: all 0.3s ease 0s;
 
@@ -79,12 +79,12 @@
 }
 
 // Включает плавную прокрутку на iOS Safari (особенно в overflow: scroll контейнерах)
-%smoothscroll {
+%smooth-scroll {
   -webkit-overflow-scrolling: touch;
 }
 
 // Убирает видимость скроллбара в WebKit-браузерах (Chrome, Safari)
-%hidescroll {
+%hide-scroll {
   &::-webkit-scrollbar {
     display: none;
   }

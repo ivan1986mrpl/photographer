@@ -1,4 +1,4 @@
-import { _slideUp, _slideToggle, _slideDown } from '../function/function';
+import { _slideUp, _slideToggle /* _slideDown */ } from '../function/function';
 
 export default function spollers() {
   const spollersArray = document.querySelectorAll('[data-spollers]');

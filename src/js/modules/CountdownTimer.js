@@ -92,9 +92,9 @@ class CountdownTimer {
     const elements = document.querySelectorAll(this.parentSelector);
 
     if (elements.length === 0) {
-      console.warn(
-        `CountdownTimer: No elements found with selector "${this.parentSelector}"`,
-      );
+      // console.warn(
+      //   `CountdownTimer: No elements found with selector "${this.parentSelector}"`,
+      // );
       this.stop();
       return;
     }
@@ -153,19 +153,20 @@ class CountdownTimer {
   init() {
     // Проверяем обязательные параметры перед запуском
     if (!this.parentSelector) {
-      console.error('CountdownTimer: Missing "parentSelector" parameter');
+      // console.error('CountdownTimer: Missing "parentSelector" parameter');
       return;
     }
     if (!this.to) {
-      console.error('CountdownTimer: Missing "to" parameter');
+      // console.error('CountdownTimer: Missing "to" parameter');
       return;
     }
 
     try {
       this.toDate = this.getTargetDate();
     } catch (e) {
-      console.error(e.message);
-      return;
+      // console.error(e.message);
+      throw new Error(e.message);
+      // return;
     }
 
     // Запускаем первое обновление и создаём интервал

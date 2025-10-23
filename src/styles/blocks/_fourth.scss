@@ -6,17 +6,8 @@
   color: var(--color-dark);
   background-color: var(--color-white);
 
-  &__container {
-  }
-
   &__header {
     margin-bottom: 40px;
-  }
-
-  &__title {
-  }
-
-  &__subtitle {
   }
 
   &__list {
@@ -25,12 +16,6 @@
     justify-content: center;
     align-items: center;
     gap: 40px;
-  }
-
-  &__item {
-  }
-
-  &__card {
   }
 }
 
@@ -67,9 +52,6 @@
   &__list {
     padding-left: 20px;
     list-style: disc;
-  }
-
-  &__item {
   }
 
   &__price {
