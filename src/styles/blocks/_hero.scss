@@ -1,22 +1,5 @@
 @use '../helpers' as *;
 
-// .hero {
-//   position: relative;
-//   display: flex;
-//   min-height: 100vh;
-//   padding-top: 0;
-
-//   &__container {
-//     flex: 1 1 auto;
-//     position: relative;
-//     z-index: 2;
-
-//     @include adaptive-clamp('padding-top', 200, 90);
-//     @include adaptive-clamp('padding-bottom', 200, 40);
-//   }
-
-// }
-
 .hero {
   position: relative;
 
@@ -78,7 +61,6 @@
   }
 
   &__img {
-    // align-self: start;
     margin-top: 121px;
 
     @media (max-width: em(1300)) {

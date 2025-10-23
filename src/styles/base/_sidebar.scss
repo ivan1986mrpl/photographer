@@ -23,6 +23,10 @@
     @media (max-width: em(767.98)) {
       height: 432px;
     }
+
+    @media (max-width: em(500)) {
+      display: none;
+    }
   }
 
   &__text {
