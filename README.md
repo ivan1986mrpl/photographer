@@ -1,11 +1,15 @@
-1. Design: [link](https://www.figma.com/design/iFsApEUsf6tPwXas56gOiT/Portfolio)
+# Portfolio photographer
 
-2. Deploy: [link](https://ivan1986mrpl.github.io/photographer/dist/)
+## Landing
 
-3. Technologies: HTML, SCSS, Javascript, Vite, Eslint, Stylelint, Prettier
+- Design: [link](https://www.figma.com/design/iFsApEUsf6tPwXas56gOiT/Portfolio)
 
-4. Screenshot:
-   <img width="1900" height="5411" alt="portfolio-landing" src="https://github.com/user-attachments/assets/166bcc2e-70c1-407e-b27e-fdf642d57515" />
+- Deploy: [link](https://ivan1986mrpl.github.io/photographer/dist/)
 
-5. Google Page Speed:
-   <img src="https://github.com/user-attachments/assets/ddb8572c-6a0b-4381-815b-c2eaea68daeb" />
+- Technologies: HTML, SCSS, Javascript, Vite, Eslint, Stylelint, Prettier
+
+- Google Page Speed:
+  <img src="https://github.com/user-attachments/assets/ddb8572c-6a0b-4381-815b-c2eaea68daeb" />
+
+- Screenshot:
+  <img width="1440" height="4312" alt="Home - 1440" src="https://github.com/user-attachments/assets/ee903595-8452-4bd0-9e97-451411b7eaf1" />
