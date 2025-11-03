@@ -7,6 +7,7 @@ import spollers from './modules/spollers';
 import popup from './modules/popup';
 // import { DateUpdater } from './modules/DateUpdater';
 import { counterAnimation } from './modules/counterAnimation';
+import sliderPortfolio from './modules/sliderPortfolio';
 // import { slider } from './modules/slider';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -18,4 +19,5 @@ window.addEventListener('DOMContentLoaded', () => {
   counterAnimation();
   // slider();
   popup();
+  sliderPortfolio();
 });

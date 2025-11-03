@@ -3,7 +3,7 @@
 .header {
   --header-animation-shadow: var(--color-orange);
 
-  animation-name: scrolling-header; //  2.04
+  animation-name: scrolling-header;
   animation-fill-mode: both;
   animation-timeline: scroll();
   animation-range: rem(100) rem(200);
