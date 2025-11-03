@@ -12,4 +12,4 @@
   <img src="https://github.com/user-attachments/assets/ddb8572c-6a0b-4381-815b-c2eaea68daeb" />
 
 - Screenshot:
-  <img width="1900" height="5411" alt="portfolio-landing" src="https://github.com/user-attachments/assets/166bcc2e-70c1-407e-b27e-fdf642d57515" />
+  <img width="1440" height="4312" alt="Home - 1440" src="https://github.com/user-attachments/assets/ee903595-8452-4bd0-9e97-451411b7eaf1" />

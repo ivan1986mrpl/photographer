@@ -1,167 +1,191 @@
-const counterAnimation = () => {
-  const counters = document.querySelectorAll('[data-animation-counter]');
-  const observed = new WeakSet();
+/**
+ * CounterAnimationCollection.js
+ * Numeric counter animation module
+ *
+ * You can use any symbols after the number (suffixes): %, +, items, kg, °C, etc.
+ * Decimal and negative numbers are supported,
+ * but only when the sign or decimal part follows the number.
+ *
+ * Usage:
+ * <span data-animation-counter></span>
+ * <span data-animation-counter>1200+</span>
+ * <span
+ *    data-animation-counter="1500"
+ *    data-start-value="500"
+ *    data-easing="easeInOutCubic">3000</span>
+ * <span data-animation-counter data-reset-on-exit="true">75%</span>
+ *
+ * Data attributes:
+ * data-animation-counter="1000"  = animation duration (ms)
+ * data-start-value="0"           = starting value
+ * data-easing="easeOutQuad"      = easing function
+ * data-reset-on-exit="true"      = reset animation when leaving the viewport
+ */
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        const counter = entry.target;
+const rootSelector = '[data-animation-counter]';
 
-        if (entry.isIntersecting && !observed.has(counter)) {
-          observed.add(counter);
-          if (!counter.dataset.originalText) {
-            counter.dataset.originalText = counter.textContent;
-          }
-          animateCounterFromElement(counter);
-        } else if (
-          !entry.isIntersecting &&
-          counter.dataset.resetOnExit === 'true'
-        ) {
-          observed.delete(counter);
-
-          // Восстанавливаем исходный текст (число + суффикс)
-          if (counter.dataset.originalText) {
-            counter.textContent = counter.dataset.originalText;
-          } else {
-            const startValue = parseFloat(counter.dataset.startValue) || 0;
-            counter.textContent = startValue;
-          }
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    },
-  );
-
-  counters.forEach((counter) => {
-    if (!counter.dataset.originalText) {
-      counter.dataset.originalText = counter.textContent;
-    }
-    observer.observe(counter);
-
-    // Анимация при загрузке, если уже в viewport
-    if (isInViewport(counter) && !observed.has(counter)) {
-      observed.add(counter);
-      animateCounterFromElement(counter);
-    }
-  });
-};
-
-function animateCounterFromElement(counter) {
-  const duration = parseInt(counter.dataset.animationCounter, 10) || 1000;
-  const startValue = parseFloat(counter.dataset.startValue) || 0;
-  const easingName = counter.dataset.easing || 'easeOutQuad';
-  const easingFn = easingFunctions[easingName] || easingFunctions.easeOutQuad;
-
-  const rawText = counter.textContent.replace(/−/g, '-').trim();
-  const match = rawText.match(/^(-?\d+[.,]?\d*)(.*)$/);
-
-  if (!match) {
-    return;
-  }
-
-  const numericText = match[1].replace(/,/g, '.');
-  const suffix = match[2].trim();
-
-  const targetValue = parseFloat(numericText);
-  if (isNaN(targetValue)) {
-    return;
-  }
-
-  const decimalPlaces = (numericText.split('.')[1] || '').length;
-
-  animateCounter({
-    element: counter,
-    start: startValue,
-    target: targetValue,
-    duration,
-    suffix,
-    decimals: decimalPlaces,
-    easing: easingFn,
-  });
-}
-
-function animateCounter({
-  element,
-  start,
-  target,
-  duration,
-  suffix = '',
-  decimals = 0,
-  easing,
-}) {
-  let startTime = null;
-
-  const update = (currentTime) => {
-    if (!startTime) {
-      startTime = currentTime;
-    }
-
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const easedProgress = easing(progress);
-
-    const currentValue = start + (target - start) * easedProgress;
-    element.textContent = currentValue.toFixed(decimals) + suffix;
-
-    if (progress < 1) {
-      requestAnimationFrame(update);
-    }
+class CounterAnimation {
+  defaults = {
+    duration: 1000,
+    startValue: 0,
+    easing: 'easeOutQuad',
+    resetOnExit: true,
   };
 
-  requestAnimationFrame(update);
+  selectors = {
+    root: rootSelector,
+  };
+
+  easingFunctions = {
+    linear: (t) => t,
+    easeOutQuad: (t) => t * (2 - t),
+    easeInOutCubic: (t) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
+  };
+
+  constructor(element, observer) {
+    this.element = element;
+    this.observer = observer;
+    this.settings = this.getSettings();
+    this.init();
+  }
+
+  getSettings() {
+    const el = this.element;
+    return {
+      duration:
+        parseInt(el.dataset.animationCounter, 10) || this.defaults.duration,
+      startValue: parseFloat(el.dataset.startValue) || this.defaults.startValue,
+      easing: el.dataset.easing || this.defaults.easing,
+      resetOnExit:
+        el.dataset.resetOnExit === 'true' || this.defaults.resetOnExit,
+    };
+  }
+
+  init() {
+    if (!this.element.dataset.originalText) {
+      this.element.dataset.originalText = this.element.textContent;
+    }
+
+    this.observer.observe(this.element);
+
+    if (this.isInViewport(this.element)) {
+      requestAnimationFrame(() => this.animate());
+    }
+  }
+
+  animate() {
+    const { duration, startValue, easing } = this.settings;
+    const easingFn =
+      this.easingFunctions[easing] || this.easingFunctions.easeOutQuad;
+
+    const rawText = this.element.textContent.replace(/−/g, '-').trim();
+    const match = rawText.match(/^(-?\d+[.,]?\d*)(.*)$/);
+    if (!match) {
+      return;
+    }
+
+    const numericText = match[1].replace(/,/g, '.');
+    const suffix = match[2].trim();
+    const targetValue = parseFloat(numericText);
+    if (isNaN(targetValue)) {
+      return;
+    }
+
+    const decimals = (numericText.split('.')[1] || '').length;
+
+    this.animateCounter({
+      start: startValue,
+      target: targetValue,
+      duration,
+      suffix,
+      decimals,
+      easing: easingFn,
+    });
+  }
+
+  animateCounter({ start, target, duration, suffix, decimals, easing }) {
+    let startTime = null;
+
+    const update = (currentTime) => {
+      if (!startTime) {
+        startTime = currentTime;
+      }
+
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easing(progress);
+
+      if (progress > 0) {
+        const currentValue = start + (target - start) * easedProgress;
+        this.element.textContent = currentValue.toFixed(decimals) + suffix;
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    };
+
+    requestAnimationFrame(update);
+  }
+
+  reset() {
+    if (this.element.dataset.originalText) {
+      this.element.textContent = this.element.dataset.originalText;
+    } else {
+      this.element.textContent = this.settings.startValue;
+    }
+  }
+
+  isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top < window.innerHeight &&
+      rect.bottom > 0 &&
+      rect.left < window.innerWidth &&
+      rect.right > 0
+    );
+  }
 }
 
-const easingFunctions = {
-  linear: (t) => t,
-  easeOutQuad: (t) => t * (2 - t),
-  easeInOutCubic: (t) =>
-    t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
-};
+class CounterAnimationCollection {
+  constructor() {
+    this.observed = new WeakSet();
+    this.instances = new Map();
+    this.initObserver();
+    this.init();
+  }
 
-function isInViewport(el) {
-  const rect = el.getBoundingClientRect();
-  return (
-    rect.top < window.innerHeight &&
-    rect.bottom > 0 &&
-    rect.left < window.innerWidth &&
-    rect.right > 0
-  );
+  initObserver() {
+    this.observer = new IntersectionObserver(this.handleIntersect, {
+      threshold: 0.5,
+    });
+  }
+
+  handleIntersect = (entries) => {
+    entries.forEach((entry) => {
+      const element = entry.target;
+      const instance = this.instances.get(element);
+      if (!instance) {
+        return;
+      }
+
+      if (entry.isIntersecting && !this.observed.has(element)) {
+        this.observed.add(element);
+        instance.animate();
+      } else if (!entry.isIntersecting && instance.settings.resetOnExit) {
+        this.observed.delete(element);
+        instance.reset();
+      }
+    });
+  };
+
+  init() {
+    document.querySelectorAll(rootSelector).forEach((el) => {
+      const instance = new CounterAnimation(el, this.observer);
+      this.instances.set(el, instance);
+    });
+  }
 }
 
-export { counterAnimation };
-
-/*
-data-animation-counter — длительность анимации в миллисекундах (1000 = 1 секунда)
-data-start-value — с какого числа начинать анимацию (по умолчанию 0)
-data-easing — название easing-функции для анимации (linear, easeOutQuad, easeInOutCubic)
-data-reset-on-exit — если true, анимация сбрасывается при выходе из viewport и может запускаться заново
-
-Анимация длится 1000мс, стартовое значение по умолчанию (0)
-<span data-animation-counter="1000">100</span>
-
-Длительность 1500мс, анимация с 0 до 99.99, отображается суффикс %
-<span data-animation-counter="1500" data-start-value="0">99.99%</span>
-
-Длительность 1000мс, easing функция easeInOutCubic, суффикс +
-<span data-animation-counter="1000" data-easing="easeInOutCubic">12345+</span>
-
-Длительность 1200мс, анимация с 0, сброс при выходе из viewport включён
-<span data-animation-counter="1200" data-start-value="0" data-reset-on-exit="true">25%</span>
-
-<span data-animation-counter="1000" data-start-value="0" data-easing="easeOutQuad"
-  data-reset-on-exit="true">
-  123.45%
-</span>
-
-<span data-animation-counter="1000" data-start-value="0" data-easing="easeOutQuad"
-  data-reset-on-exit="true">
-  123.45+
-</span>
-
-<span data-animation-counter="1000" data-start-value="0" data-easing="easeOutQuad"
-  data-reset-on-exit="true">
-  123.45items
-</span>
-*/
+export default CounterAnimationCollection;
