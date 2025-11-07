@@ -1,7 +1,6 @@
 @use '../helpers' as *;
 @use '../base/header/header-fon';
-
-// @use '../base/header/header-shadow';
+@use '../base/header/header-shadow';
 @use '../base/header/burger-4';
 @use '../base/header/menu-header';
 
@@ -23,27 +22,28 @@
   &__logo {
     position: relative;
     z-index: 5;
+    animation: anim-logo 1.5s ease-in-out infinite;
   }
 }
 
-// .header__logo svg {
-//   transition: transform 0.3s ease;
-// }
+@keyframes anim-logo {
+  0% {
+    transform: scale(1);
+  }
 
-// @keyframes heart-logo {
-//   0% {
-//     transform: scale(1);
-//   }
-//   25% {
-//     transform: scale(1.15);
-//   }
-//   40% {
-//     transform: scale(0.9);
-//   }
-//   55% {
-//     transform: scale(1.1);
-//   }
-//   100% {
-//     transform: scale(1);
-//   }
-// }
+  25% {
+    transform: scale(1.15);
+  }
+
+  40% {
+    transform: scale(0.9);
+  }
+
+  55% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

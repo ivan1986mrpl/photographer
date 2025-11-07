@@ -53,9 +53,6 @@
     "vite-plugin-sass-glob-import": "5.0.0"
   },
   "browserslist": [
-    ">0.5%",
-    "last 2 versions",
-    "not dead",
-    "not op_mini all"
+    "last 2 versions"
   ]
 }
