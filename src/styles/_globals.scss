@@ -1,6 +1,7 @@
 @use 'helpers' as *;
 
 body {
+  min-width: 320px;
   font-family: var(--font-family-base), sans-serif;
   font-size: var(--font-size);
   font-weight: var(--font-weight);
