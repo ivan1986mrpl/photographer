@@ -4,7 +4,7 @@
 
 - Design: [link](https://www.figma.com/design/iFsApEUsf6tPwXas56gOiT/Portfolio)
 
-- Deploy: [link](https://ivan1986mrpl.github.io/photographer/dist/)
+- Deploy: [link](https://ivan-mr1.github.io/photographer/dist/)
 
 - Technologies: HTML, SCSS, Javascript, Vite, Eslint, Stylelint, Prettier
 
